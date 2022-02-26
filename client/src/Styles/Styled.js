@@ -184,7 +184,7 @@ export const Input = styled.input`
 // CardPizza
 export const Card = styled.div`
         width : 360px;
-        height : 160px;
+        height : 180px;
         border-radius : 10px;
         overflow : hidden;
         display: flex;
@@ -201,7 +201,7 @@ export const Img = styled.img`
         z-index : 0;
         position : absolute;
         width: 245px;
-        height: 160px;
+        height: 180px;
         border-radius : 10px;
         @media (min-width: 600px) {
             width:340px;
@@ -213,7 +213,7 @@ export const InfoCard = styled.div`
         z-index : 1;
         background: linear-gradient(to left, rgba(226,90,52,1) 5%, rgba(185,75,44,1) 20%, rgba(55,48,48,1) 75%, transparent);
         width : 300px;
-        height : 160px;
+        height : 180px;
         margin-left : 160px;
         @media (min-width: 600px) {
             width : 200px;
