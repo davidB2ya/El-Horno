@@ -8,6 +8,7 @@ import IamChef from './views/IamChef/IamChef';
 import Login from "./views/Login/Login.jsx"
 import Buys from './views/Buys/Buys';
 import Dashboard from './views/Dashboard/Dashboard';
+import RegisterUser from './views/Login/RegisterUser';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path= '/' element={<Home/>} exact/>
         <Route path= '/home' element={<Home/>} exact/>
         <Route path= '/login' element={<Login/>} exact/>
+        <Route path= '/register' element={<RegisterUser/>} exact/>
 
         <Route path="/products" element={<Products/>}/>
         <Route path="/chef" element={<IamChef/>}/>

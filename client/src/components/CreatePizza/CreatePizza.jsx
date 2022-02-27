@@ -1,51 +1,86 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import img from '../../assets/images (5).jfif' 
-import { CardPizza, ContainerChef, Input } from '../../Styles/Styled.js'
+import { ButtonDelivery, CardPizza, ContainerChef, ContainerPizzaChef, Input, LogoChef } from '../../Styles/Styled.js'
+
 
 const CreatePizza = () => {
+
+    const navigate = useNavigate();
+    const [client, setClient] = useState('');
+    const [namePizza, setNamePizza] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+
+    const baseUrl = 'http://localhost:1337'
+
+    async function newSales(event) {
+        event.preventDefault();
+        const response = await fetch(`${baseUrl}/api/new/sales`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                client,
+                namePizza,
+                phone,
+                address,
+                // price,
+                // ingredients
+            }),
+        });
+
+        const data = await response.json();
+        console.log(data);
+        
+        if(data.msg === 'We have a new sale!'){
+                navigate("/products")
+        }else{
+            alert("Pedido fallido")
+        }
+    }
 
 return (
     <ContainerChef>
         <CardPizza>
-            <img src={img} alt="img pizza" style={{width:"400px", height:"140px", marginBottom:"1em"}}></img>
+            <ContainerPizzaChef>
+                <img src={img} alt="img pizza"></img>
+                <LogoChef/>
+            </ContainerPizzaChef>
             <div>
-            <form >
+            <form onSubmit={newSales}>
                 <Input
-                    // value={name}
-                    // onChange={(e) => setName(e.target.value)} 
+                    value={client}
+                    onChange={(e) => setClient(e.target.value)} 
                     type="text"
                     placeholder="Nombre"
                 />
                 <br/>
                 <Input
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
+                    value={namePizza}
+                    onChange={(e) => setNamePizza(e.target.value)}
                     type="text"
                     placeholder="Puede nombrar su Pizza"
                 />
                 <br/>
                 <Input
-                    // value={password}
-                    // onChange={(e) => setPassword(e.target.value)}
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     type="phone"
                     placeholder="Teléfono"
                 />
                 <br/>
                 <Input
-                    // value={password}
-                    // onChange={(e) => setPassword(e.target.value)}
-                    type="select"
-                    placeholder="Ingredientes"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    type="text"
+                    placeholder="Dirección"
 
                 />
-                <select >
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
+                
                 <br/>
-                <input type="submit" value="Hornear 🍕" /> 
+                <ButtonDelivery>Hornear 🍕</ButtonDelivery> 
                 </form>
             </div>
         </CardPizza>

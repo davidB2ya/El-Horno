@@ -1,14 +1,11 @@
 import React from 'react'
 import fontPizza from '../../assets/images (4).png'
-// import { IoMdPizza } from 'react-icons/io'
-import { IoIosHeart } from 'react-icons/io'
-import { GiFullPizza } from 'react-icons/gi'
-import { ButtonIoIosHeart, ButtonSelect, Card, ContainerPrices, ContainerTitlePizza, Img, InfoCard, TitlePizza } from '../../Styles/Styled.js'
+import { ButtonIoIosHeart, ButtonSelect, Card, ContainerPrices, ContainerTitlePizza, FullPizza, HeartFavorite, Img, InfoCard, TitlePizza } from '../../Styles/Styled.js'
 
-const CardPizza = ({data}) => {
+const CardPizza = ({data, addToCart}) => {
 
-    const { title, description, price } = data
-
+    const { id, title, description, price } = data
+    
 return (
 
     <Card >
@@ -16,13 +13,13 @@ return (
         <InfoCard>
             <ContainerTitlePizza>
                 <TitlePizza>{title}</TitlePizza>
-                <ButtonIoIosHeart><IoIosHeart style={{color:'#fff'}}/></ButtonIoIosHeart>
+                <ButtonIoIosHeart><HeartFavorite/></ButtonIoIosHeart>
             </ContainerTitlePizza>
             <span>{description}</span>
             <br/>
             <ContainerPrices>
                 <span>Precio: ${price}</span>
-                <ButtonSelect>Pedir <GiFullPizza style={{fontSize:'20px'}}/></ButtonSelect>
+                <ButtonSelect onClick={()=>addToCart(id)}>Pedir <FullPizza/></ButtonSelect>
             </ContainerPrices>
         </InfoCard>
     </Card>
