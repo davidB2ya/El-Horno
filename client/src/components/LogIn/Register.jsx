@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Login, CardLogin, TitleRegister, Input, ButtonDelivery} from '../../Styles/Styled.js'
-import ImgPizza from '../../assets/images (1).jfif'
+import ImgPizza from '../../assets/images (2).jfif'
 
-const LogIn = () => {
+const Register = () => {
 
-    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -15,7 +14,7 @@ const LogIn = () => {
 
     async function registerUser(event) {
         event.preventDefault();
-        const response = await fetch(`${baseUrl}/api/login`, {
+        const response = await fetch(`${baseUrl}/api/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,30 +29,19 @@ const LogIn = () => {
 
         const data = await response.json();
         console.log(data);
-        
-        if(data.msg === 'Login success!'){
-            if(data.role === 2){
-                navigate("/dashboard")
-            }else{
-                navigate("/products")
-            }
-        }else{
-            alert("Ingreso fallido")
-        }
     }
 
 return (
     <Login>
         <CardLogin>
         <img src={ImgPizza} alt="img pizza" ></img>
-            <TitleRegister>Entrar</TitleRegister>
+            <TitleRegister>Registrate</TitleRegister>
             <form onSubmit={registerUser}>
                 <Input
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     type="text"
                     placeholder="Nombre"
-                    autoComplete='off'
                 />
                 <br />
                 <Input
@@ -61,7 +49,6 @@ return (
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     placeholder="Correo"
-                    autoComplete='false'
                 />
                 <br />
                 <Input
@@ -69,14 +56,13 @@ return (
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     placeholder="Contraseña"
-                    autoComplete='false'
                 />
                 <br />
-                <ButtonDelivery>Ingresar</ButtonDelivery>
+                <ButtonDelivery>Registrarse</ButtonDelivery>
             </form>
         </CardLogin>    
     </Login>
 )
 }
 
-export default LogIn
+export default Register

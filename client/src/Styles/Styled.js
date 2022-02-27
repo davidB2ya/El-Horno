@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
+import { SiCodechef} from 'react-icons/si'
+import { IoIosHeart } from 'react-icons/io'
+import { GiFullPizza } from 'react-icons/gi'
+import { HiShoppingCart } from 'react-icons/hi'
 
 // Welcome
 export const ContainerWelcome = styled.div`
@@ -60,12 +63,14 @@ export const ButtonDelivery = styled.button`
     line-height: 24px;
     color: #FFFFFF;
     letter-spacing: 1.71429px;
-    margin: 1em 5em 1em 5em;
+    margin: 1em 4em 1em 4em;
     cursor: pointer;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease 0s;
-    cursor: pointer;
     outline: none;
+    @media (min-width: 600px){
+        margin: 1em 5em 1em 5em;
+    }
 
     :hover{
         background-color: #e25a34;
@@ -139,7 +144,17 @@ export const MenuLink = styled(Link)`
         &:hover {
         color: #C93107;
         }
-    `;
+    `
+export const CartIcon = styled(HiShoppingCart)`
+        cursor: pointer;
+        font-size: 40px;
+        text-decoration: none;
+        color: black;
+        transition: all 0.2s ease-in;
+        &:hover {
+        color: #C93107;
+        }
+    `
 
 // CreatePizza
 export const ContainerChef = styled.div`
@@ -151,16 +166,40 @@ export const CardPizza = styled.div`
         width : 360px;
         height : 600px;
         border-radius : 10px;
-        overflow : hidden;
-        display: flex;
-        flex-direction : column;
         color : #fff;
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
         cursor: default;
         @media (min-width: 600px) {
-            width : 400px;
+            width:400px;
         }
     `
+
+export const ContainerPizzaChef = styled.div`
+    margin-bottom: 3em;
+
+    img{
+        width:360px;
+        height:140px;
+        margin-bottom:5em;
+        position:absolute;
+        border-radius:10px;
+        @media (min-width: 600px) {
+            width:400px;
+        }
+    }
+    
+`
+
+export const LogoChef = styled(SiCodechef)`
+    font-size:100px;
+    margin-left: 230px; 
+    margin-top: 20px;
+    color: #fff; 
+    position:relative;
+    @media (min-width: 600px) {
+        margin-left: 250px; 
+    }
+`
 
 export const Input = styled.input`
         border-radius: 10px;
@@ -273,6 +312,16 @@ export const ButtonSelect = styled.button`
         }
     `
 
+export const HeartFavorite = styled(IoIosHeart)`
+    font-size:25px;
+    color: #fff;
+`
+export const FullPizza = styled(GiFullPizza)`
+    font-size:20px;
+    color: #fff;
+`
+
+
 // ListCardPizza
 export const List = styled.div`
         display: grid;
@@ -296,6 +345,10 @@ export const ContainerDelivery = styled.div`
         justify-content: center;
 
     `
+export const CodeChef = styled(SiCodechef)`
+    font-size:20px;
+    margin-left: 10px;
+`  
 
 // Login
 export const Login = styled.div`
@@ -306,7 +359,7 @@ export const Login = styled.div`
 
 export const CardLogin = styled.div`
     width : 360px;
-    height : 520px;
+    height : 560px;
     border-radius : 10px;
     overflow : hidden;
     display: flex;
@@ -317,10 +370,14 @@ export const CardLogin = styled.div`
     @media (min-width: 600px) {
         width : 400px;
         }
+    img{
+        width:400px;
+        height:150px;
+    }
 `
 
 export const TitleRegister = styled.h1`
-    color : #C93107;
+    color : #fff;
     font-family: 'Average', serif;
     font-size: 40px;
     font-style: normal;
