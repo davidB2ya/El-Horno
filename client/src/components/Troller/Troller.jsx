@@ -11,6 +11,7 @@ const Troller = () => {
 
   return (
     <div>
+      
       {
         cart.length === 0 ? <h2>Listado de Compras</h2> : <h2>Carrito Vacio</h2>
       }

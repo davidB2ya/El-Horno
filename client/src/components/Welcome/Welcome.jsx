@@ -13,10 +13,7 @@ return (
             <Link to="/products"><ButtonDelivery>Ordenar 🍕</ButtonDelivery></Link>
         </TextWelcome>
         <ImgWelcome>
-            <div>
                 <img src={Pizzas} alt="Imagenes Pizzas"></img>
-            </div>
-            
         </ImgWelcome>
     </ContainerWelcome>
 )

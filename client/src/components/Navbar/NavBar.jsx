@@ -20,7 +20,7 @@ return (
             <Link to="/register"><Button>Registrate</Button></Link>
             <Link to="/login"><Button>Entrar</Button></Link>
             {
-                location.pathname === "/" || location.pathname === "/home" ? 
+                location.pathname === "/" || location.pathname === "/home" || location.pathname === "/dashboard" ? 
                 <div></div> : 
                 <div>
                     <Link to="/buys"><CartIcon/></Link>
