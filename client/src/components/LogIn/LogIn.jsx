@@ -72,7 +72,7 @@ return (
                     autoComplete='false'
                 />
                 <br />
-                <ButtonDelivery>Ingresar</ButtonDelivery>
+                <ButtonDelivery onClick={registerUser}>Ingresar</ButtonDelivery>
             </form>
         </CardLogin>    
     </Login>

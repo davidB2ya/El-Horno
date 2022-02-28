@@ -14,10 +14,6 @@ salesRouter.post('/', async (req, res) => {
 
         if (phone.toString().length !== 10)
             return res.status(400).json({ msg: 'Invalid phone.' });
-        
-        // const phoneUser = await Sales.findOne({ phone });
-
-        // if (phoneUser) return res.status(400).json({ msg: 'This phone already exists.' });
 
         const newSales = new Sales({
             client,

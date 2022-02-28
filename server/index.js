@@ -18,7 +18,7 @@ app.use(allRoutes);
 app.use(express.static('../client/build'))
 
 // Setting
-const port = process.env.PORT || '1337'
+const port = process.env.PORT || '3001'
 
 // defines a port and passes the value to it
 app.set('port', port)
