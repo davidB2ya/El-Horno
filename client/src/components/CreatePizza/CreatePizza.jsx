@@ -12,7 +12,7 @@ const CreatePizza = () => {
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
 
-    const baseUrl = 'http://localhost:1337'
+    const baseUrl = 'http://localhost:3001'
 
     async function newSales(event) {
         event.preventDefault();
@@ -76,10 +76,11 @@ return (
                     onChange={(e) => setAddress(e.target.value)}
                     type="text"
                     placeholder="Dirección"
-
                 />
-                
                 <br/>
+                <div>
+                    <checkbox value="true">hola</checkbox>
+                </div>
                 <ButtonDelivery>Hornear 🍕</ButtonDelivery> 
                 </form>
             </div>

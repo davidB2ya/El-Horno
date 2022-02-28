@@ -58,7 +58,7 @@ return (
                     placeholder="Contraseña"
                 />
                 <br />
-                <ButtonDelivery>Registrarse</ButtonDelivery>
+                <ButtonDelivery onClick={registerUser}>Registrarse</ButtonDelivery>
             </form>
         </CardLogin>    
     </Login>
