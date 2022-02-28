@@ -29,7 +29,27 @@ export const TextWelcome = styled.div`
 `
 
 export const ImgWelcome = styled.div`
-    width: 40vw;
+display: flex;
+justify-content: center;
+margin-top: 1em;
+    img{
+        width: 65vw;
+        margin-left:-16px;
+        border-radius: 10px;
+        @media (min-width: 600px){
+            width: 60vw;
+            margin-left:-40px;
+        }
+        @media (min-width: 768px){
+            width: 35vw;
+            height: 35vh;
+            margin-left: 0px;
+        }
+        @media (min-width: 1024px){
+            width: 40vw;
+            height: 45vh;
+        }
+    }
 `
 
 export const TitlePrincipal = styled.h1`
@@ -188,6 +208,23 @@ export const ContainerPizzaChef = styled.div`
         }
     }
     
+`
+
+// IamChef
+export const TitleIamChef = styled.h2`
+    display: flex;
+    justify-content: center;
+    color: #C93107;
+    font-size: 40px;
+`
+export const TextChef = styled.p`
+    display: flex;
+    justify-content: center;
+    color: #000;
+    font-size: 18px;
+    width:300px;
+    margin: auto;
+    padding:1em 0;
 `
 
 export const LogoChef = styled(SiCodechef)`
@@ -393,4 +430,58 @@ export const ContainerLogin = styled.div`
     margin: auto;
     gap: 1em;
     cursor:default;
+`
+// SiderBar
+export const ContainerSiderBar = styled.div`
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between; 
+    padding: 1em;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: #be4030;
+    top:1em;
+    position: absolute;
+    z-index:1;
+    left: -15em;
+`
+
+// Traking
+export const SquareTraking = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    cursor: default;
+`
+export const General = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        color: #be4030;
+    }
+    h3{
+        font-size: 20px;
+    }
+    span{
+        font-size:20px;
+        background-color:#2EE59D;
+        border-radius: 20px;
+        padding: 10px;
+    }
+`
+// Dashboard
+export const ContainerDashboard = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `

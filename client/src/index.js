@@ -12,7 +12,7 @@ ReactDOM.render(
       <Router>
         <App />
       </Router>
-    </DataProvider>,
+    </DataProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
